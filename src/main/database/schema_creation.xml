@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">  
+	
+	<changeSet id="1" author="akshay" context="integration">
+		<sql>
+			CREATE TABLE survey(
+   				survey_id INT NOT NULL AUTO_INCREMENT,
+   				survey_name VARCHAR(50) NOT NULL,   
+   				PRIMARY KEY ( survey_id )
+			);
+		</sql>
+		
+	
+	</changeSet>
+
+	<changeSet id="2" author="akshay" context="integration">
+		<sql>
+			CREATE TABLE question(
+   question_id INT NOT NULL AUTO_INCREMENT,
+   question_label VARCHAR(100) NOT NULL,
+   survey_id INT NOT NULL,
+   PRIMARY KEY ( question_id ),
+   FOREIGN KEY (survey_id) REFERENCES survey (survey_id) 
+ON DELETE CASCADE ON UPDATE CASCADE);
+		</sql>	
+	</changeSet>
+	
+	<changeSet id="3" author="akshay" context="integration">
+		<sql>
+			CREATE TABLE response(
+   response_id INT NOT NULL AUTO_INCREMENT,
+   text VARCHAR(100) NOT NULL,
+   question_id INT NOT NULL,
+   survey_id INT NOT NULL,
+   PRIMARY KEY ( response_id ),
+   FOREIGN KEY (survey_id) REFERENCES survey (survey_id) 
+ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (question_id) REFERENCES question(question_id)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+		</sql>
+	</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">  
+                      
+                      
+	<changeSet id="1" author="akshay" context="local">
+		<sql>
+			insert into survey(survey_id, survey_name) values
+			(1, "IceCream Survey");
+		</sql>
+		
+	
+	</changeSet>
+	
+	<changeSet id="2" author="akshay" context="local">
+		<sql>
+			insert into survey(survey_id, survey_name) values
+			(2, "Car Survey");
+		</sql>
+		
+	
+	</changeSet>
+	
+	<changeSet id="3" author="akshay" context="local">
+		<sql>
+			insert into question(question_id, question_label, survey_id) values
+			(1, "Which flavor ice-cream you like?",1);
+		</sql>
+		
+	
+	</changeSet>
+	
+	<changeSet id="4" author="akshay" context="local">
+		<sql>
+			insert into question(question_id, question_label, survey_id) values
+			(2, "Which company's ice-cream you like?",1);
+		</sql>
+		
+	
+	</changeSet>
+	
+	<changeSet id="5" author="akshay" context="local">
+		<sql>
+			insert into question(question_id, question_label, survey_id) values
+			(3, "Do you mix different types of ice cream and eat?",1);
+		</sql>
+		
+	
+	</changeSet>
+	
+	<changeSet id="6" author="akshay" context="local">
+		<sql>
+			insert into question(question_id, question_label, survey_id) values
+			(4, "Which car you wish to own?",2);
+		</sql>
+		
+	
+	</changeSet>
+	
+	<changeSet id="7" author="akshay" context="local">
+		<sql>
+			insert into question(question_id, question_label, survey_id) values
+			(5, "How do you select car?",2);
+		</sql>
+		
+	
+	</changeSet>
+
+</databaseChangeLog>        
