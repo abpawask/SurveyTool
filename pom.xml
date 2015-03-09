@@ -72,7 +72,7 @@
       <artifactId>liquibase-maven-plugin</artifactId>
       <version>3.0.5</version>
       <configuration>
-       	<propertyFile>liquibase.properties</propertyFile>
+       	<propertyFile>src/main/resources/liquibase.properties</propertyFile>
         </configuration>
       <executions>
         <execution>
